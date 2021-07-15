@@ -76,17 +76,28 @@ def max_profit(list,k,n):
 
 
         
-def Floyed_Marshell(W): #take w as wight matrix on a graph
-    d = np.array(W)
-    n = d.shape[1]
-    for k in range(0,n):
-         for i in range(0,n):
-            for j in range(0,n):
-                d[i][j]=min(d[i][j],d[i][k]+d[k][j])
-    print(d)
 
     
+def ejiptian(m,n):
+    p = m/n
+    i = 2
+    parts = []
+    if m<n:
+     while p != 0 :
+        if (p - (1/i)) > 0:
+            p -= (1/i)
+            parts.append(1/i)
+            print(parts)
+        elif (p - (1/i)) == 0:
+            p =0
+            parts.append(1/i)
+        i += 1
+        if i >1000: break
+    return parts
 
-Floyed_Marshell([[0, 3, 1], [3, 0, 1], [1, 1, 0]])
+print(ejiptian(7,19))
+
+
+
 
 
